@@ -12,7 +12,7 @@ public class Reader {
     public static ArrayList<Transaction> transactionList = new ArrayList<>();
 
     public static void readTransactions() throws IOException {
-        FileReader fileReader = new FileReader("src/main/resources/transactions.csv");
+        FileReader fileReader = new FileReader("transactions.csv");
         BufferedReader bufReader = new BufferedReader(fileReader);
         String csv;
         while ((csv = bufReader.readLine()) != null) {
@@ -38,4 +38,18 @@ public class Reader {
             bufReader.close();
         }
     }
+
+    public static void saveTransaction() throws IOException{
+
+        FileWriter fileWriter = new FileWriter("transactions.csv");
+        BufferedWriter buffWriter = new BufferedWriter(fileWriter);
+
+        buffWriter.write("date|time|description|vendor|amount \n"); // header
+
+        for (transactionList t : transactionList) {
+
+        }
+
+    }
+
 }
