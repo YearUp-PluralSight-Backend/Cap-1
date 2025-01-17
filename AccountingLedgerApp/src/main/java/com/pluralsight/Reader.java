@@ -42,4 +42,20 @@ public class Reader {
             bufReader.close();
         }
     }
+
+    public static void saveTransaction() throws IOException{
+
+        FileWriter fileWriter = new FileWriter("transactions.csv");
+        BufferedWriter buffWriter = new BufferedWriter(fileWriter);
+
+        buffWriter.write("date|time|description|vendor|amount \n"); // header
+
+        for (Transaction t : transactionList) {
+
+            String data = t.getDate() + t.getTime() + t.getDesc() + t.getVendor() + t.getAmount() + '\n';
+            buffWriter.write(data);
+        }
+        buffWriter.close();
+
+    }
 }
