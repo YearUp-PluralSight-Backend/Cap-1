@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.text.DecimalFormat;
 import java.time.format.DateTimeFormatter;
 
 /*This is the Transaction class
@@ -21,7 +22,6 @@ public class Transaction {
         this.vendor = vendor;
         this.amount = amount;
     }
-
     public String getDate() {
         return date;
     }
@@ -29,7 +29,6 @@ public class Transaction {
     public String getTime() {
         return time;
     }
-
     public String getDesc() {
         return desc;
     }
@@ -42,30 +41,14 @@ public class Transaction {
         return amount;
     }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
-    public void setVendor(String vendor) {
-        this.vendor = vendor;
-    }
-
-    public void setAmount(float amount) {
-        this.amount = amount;
-    }
-
     @Override
     public String toString() {
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-        return String.format("%-10s | %-10s | %-40s | %-15s | $%5.2f", getDate(), String.format(String.valueOf(dateTimeFormatter)), getDesc(), getVendor(), getAmount());
+        return String.format("%-10s | %-10s | %-40s | %-15s | $%5.2f",
+                getDate(),
+                getTime(),
+                getDesc(),
+                getVendor(),
+                getAmount());
     }
 
 //    @Override

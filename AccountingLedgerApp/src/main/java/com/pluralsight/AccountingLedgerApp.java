@@ -41,7 +41,9 @@ public class AccountingLedgerApp {
     public static void homeScreen() throws IOException {
         System.out.println("Good afternoon, User. How can I assist you?");
         System.out.println(" D) Add a Deposit \n P) Make a Payment \n L) View your Ledger \n X) Exit");
-        String lexxsChoice = scanner.nextLine().toUpperCase().trim();
+        System.out.println("Please enter a choice: ");
+        String lexxsChoice = scanner.nextLine().toUpperCase();
+//        String lexxsChoice = scanner.nextLine().toUpperCase().trim();
         switch(lexxsChoice) {
             case "D": addDeposit();
             case "P": makePayment();

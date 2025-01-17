@@ -22,6 +22,8 @@ public class LedgerFunctions {
 
             System.out.println(trans.toString());
 
+
+
         }
         System.out.println("Press 'X' when you're ready to return to the Ledger menu");
         String exit = scanner.nextLine().toUpperCase().trim();
