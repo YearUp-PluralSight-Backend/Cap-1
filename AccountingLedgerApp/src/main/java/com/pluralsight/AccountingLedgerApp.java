@@ -42,7 +42,7 @@ public class AccountingLedgerApp {
         System.out.println("Good afternoon, User. How can I assist you?");
         System.out.println(" D) Add a Deposit \n P) Make a Payment \n L) View your Ledger \n X) Exit");
         System.out.println("Please enter a choice: ");
-        String lexxsChoice = scanner.nextLine();
+        String lexxsChoice = scanner.nextLine().toUpperCase();
 //        String lexxsChoice = scanner.nextLine().toUpperCase().trim();
         switch(lexxsChoice) {
             case "D": addDeposit();

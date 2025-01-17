@@ -42,9 +42,13 @@ public class Transaction {
     }
 
     @Override
-    public String toString(){
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-        return String.format("%-10s | %-10s | %-40s | %-15s | $%5.2f", getDate(), getTime().format(String.valueOf(dateTimeFormatter)), getDesc(), getVendor(), getAmount());
+    public String toString() {
+        return String.format("%-10s | %-10s | %-40s | %-15s | $%5.2f",
+                getDate(),
+                getTime(),
+                getDesc(),
+                getVendor(),
+                getAmount());
     }
 
 //    @Override
