@@ -30,9 +30,13 @@ public class Reader {
                     String vendor = transactionLedger[3];
                     float amount = Float.parseFloat(transactionLedger[4]);
                     Transaction newTransaction = new Transaction(date, time, desc, vendor, amount);
-                    transactionList.add( newTransaction);
+                    transactionList.add(newTransaction);
                 }
+
             }
+
+            transactionList.forEach(System.out::println);
+
             homeScreen();
             fileReader.close();
             bufReader.close();

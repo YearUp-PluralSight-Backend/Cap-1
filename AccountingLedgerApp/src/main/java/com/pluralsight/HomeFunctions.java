@@ -10,6 +10,7 @@ import java.time.format.DateTimeFormatter;
 
 import static com.pluralsight.AccountingLedgerApp.homeScreen;
 import static com.pluralsight.AccountingLedgerApp.scanner;
+import static com.pluralsight.Reader.transactionList;
 
 /*This is my HomeFunctions class
 Here you'll find the following methods:
@@ -36,12 +37,17 @@ public class HomeFunctions {
 
         String date = String.valueOf(LocalDate.now());
         String time = hms.format(LocalTime.now());
+        transactionList.add(new Transaction(date,time, desc, vendor,amount));
 
-        BufferedWriter fileWriter = new BufferedWriter(new FileWriter("src/main/resources/transactions.csv", true));
-        fileWriter.write(date + "|" + time + "|" + desc + "|" + vendor + "|" + amountDF);
-        fileWriter.newLine();
-        fileWriter.close();
-        System.out.println("Your deposit was received! We will redirect you to Account Home now...");
+
+        // remove this part for efficiently add by calling the list's add function instead of create a bufferedWriter to do the io thing.
+        /*
+                    BufferedWriter fileWriter = new BufferedWriter(new FileWriter("src/main/resources/transactions.csv", true));
+                    fileWriter.write(date + "|" + time + "|" + desc + "|" + vendor + "|" + amountDF);
+                    fileWriter.newLine();
+                    fileWriter.close();
+                    System.out.println("Your deposit was received! We will redirect you to Account Home now...");
+         */
         homeScreen();
     }
 
