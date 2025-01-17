@@ -67,6 +67,7 @@ public class HomeFunctions {
         String time = hms.format(LocalTime.now());
         transactionList.add(new Transaction(date,time, desc, vendor,amount));
 
+        // remove this part for efficiently add by calling the list's add function instead of create a bufferedWriter to do the io thing.
         /*
                     BufferedWriter fileWriter = new BufferedWriter(new FileWriter("src/main/resources/transactions.csv", true));
                     fileWriter.write(date + "|" + time + "|" + desc + "|" + vendor + "|" + amountDF);
