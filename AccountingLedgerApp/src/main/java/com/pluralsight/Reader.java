@@ -12,7 +12,7 @@ public class Reader {
     public static ArrayList<Transaction> transactionList = new ArrayList<>();
 
     public static void readTransactions() throws IOException {
-        FileReader fileReader = new FileReader("src/main/resources/transactions.csv");
+        FileReader fileReader = new FileReader("transactions.csv");
         BufferedReader bufReader = new BufferedReader(fileReader);
         String csv;
         while ((csv = bufReader.readLine()) != null) {
@@ -30,9 +30,13 @@ public class Reader {
                     String vendor = transactionLedger[3];
                     float amount = Float.parseFloat(transactionLedger[4]);
                     Transaction newTransaction = new Transaction(date, time, desc, vendor, amount);
-                    transactionList.add( newTransaction);
+                    transactionList.add(newTransaction);
                 }
+
             }
+
+            transactionList.forEach(System.out::println);
+
             homeScreen();
             fileReader.close();
             bufReader.close();
