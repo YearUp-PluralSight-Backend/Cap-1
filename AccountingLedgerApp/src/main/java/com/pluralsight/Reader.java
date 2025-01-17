@@ -46,10 +46,12 @@ public class Reader {
 
         buffWriter.write("date|time|description|vendor|amount \n"); // header
 
-        for (transactionList t : transactionList) {
+        for (Transaction t : transactionList) {
 
+            String data = t.getDate() + t.getTime() + t.getDesc() + t.getVendor() + t.getAmount() + '\n';
+            buffWriter.write(data);
         }
+        buffWriter.close();
 
     }
-
 }
