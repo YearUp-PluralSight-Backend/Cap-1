@@ -65,11 +65,14 @@ public class HomeFunctions {
 
         String date = String.valueOf(LocalDate.now());
         String time = hms.format(LocalTime.now());
+        transactionList.add(new Transaction(date,time, desc, vendor,amount));
 
-        BufferedWriter fileWriter = new BufferedWriter(new FileWriter("src/main/resources/transactions.csv", true));
-        fileWriter.write(date + "|" + time + "|" + desc + "|" + vendor + "|" + amountDF);
-        fileWriter.newLine();
-        fileWriter.close();
+        /*
+                    BufferedWriter fileWriter = new BufferedWriter(new FileWriter("src/main/resources/transactions.csv", true));
+                    fileWriter.write(date + "|" + time + "|" + desc + "|" + vendor + "|" + amountDF);
+                    fileWriter.newLine();
+                    fileWriter.close();
+         */
 
         System.out.println("Thank you for your payment! We will redirect you to Account Home now...");
         homeScreen();
